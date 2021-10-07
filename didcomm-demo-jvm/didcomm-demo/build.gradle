@@ -1,0 +1,54 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version "${kotlinJvm}"
+    id 'application'
+    //id "org.jlleitschuh.gradle.ktlint" version "${ktlintGradle}"
+    // TODO: remove once published to Maven
+    id 'com.github.johnrengelman.shadow' version '7.0.0'
+}
+
+group = 'org.didcommx.didcomm.demo'
+version = "${version}"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation platform('org.jetbrains.kotlin:kotlin-bom')
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8'
+    implementation 'com.google.code.gson:gson:2.8.8'
+    // TODO remove when contribution will be merged to upstream
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+
+    testImplementation 'org.jetbrains.kotlin:kotlin-test'
+    testImplementation 'org.jetbrains.kotlin:kotlin-test-junit'
+    testImplementation 'org.junit.jupiter:junit-jupiter-params:5.7.0'
+}
+
+application {
+    mainClass = 'org.didcommx.didcomm.demo.DemoKt'
+}
+
+compileKotlin {
+    kotlinOptions.jvmTarget = "${jvmTarget}"
+}
+
+compileTestKotlin {
+    kotlinOptions.jvmTarget = "${jvmTarget}"
+}
+
+jar {
+    manifest {
+        attributes["Main-Class"] = "org.didcommx.didcomm.demo.DemoKt"
+    }
+    baseName "didcomm-demo"
+}
+
+shadowJar {
+    // @see https://youtrack.jetbrains.com/issue/KT-25709
+    exclude("**/*.kotlin_metadata")
+    exclude("**/*.kotlin_builtins")
+
+    archiveClassifier.set("") // remove suffix `-all` as intellij can't find the library otherwise
+    baseName "didcomm-demo"
+}
