@@ -4,8 +4,9 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
         maven {
-            url 'https://maven.scijava.org/content/groups/public'
+            url 'https://s01.oss.sonatype.org/content/repositories/snapshots'
         }
+        maven { url 'https://jitpack.io' }
     }
 }
 

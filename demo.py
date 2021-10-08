@@ -44,7 +44,7 @@ def demo(alice_fun, bob_fun):
     print(f"Alice's peer DID Doc resolved by Bob:\n ${alice_peer_did_doc}")
     print()
 
-    # # 3. Alice sends message to Bob
+    # 3. Alice sends message to Bob
     msg_bob = "Hello Bob!"
     packed_to_bob = alice_fun(Command.PACK, "Hello Bob!", '--from', alice_peer_did, '--to', bob_peer_did)
     print(f"Alice sends '{msg_bob}' to Bob as '${packed_to_bob}'.")
