@@ -8,10 +8,6 @@ plugins {
 group = 'org.didcommx.didcomm.demo.cli'
 version = "${version}"
 
-repositories {
-    mavenCentral()
-}
-
 dependencies {
     implementation project(':didcomm-demo')
     implementation platform('org.jetbrains.kotlin:kotlin-bom')

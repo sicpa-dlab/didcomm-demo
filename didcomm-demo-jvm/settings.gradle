@@ -1,3 +1,14 @@
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        maven {
+            url 'https://maven.scijava.org/content/groups/public'
+        }
+    }
+}
+
 rootProject.name = 'didcomm-demo'
 include('didcomm-demo-cli')
 include('didcomm-demo')
