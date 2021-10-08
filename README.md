@@ -20,7 +20,7 @@ Prerequisites: Python 3.7+, Java 8+.
 
 1) Create virtual environment for Python
 2) Install Python part
-  `pip install -e.[tests]` 
+  `cd didcomm-demo-python && pip install -e.[tests] && cd ..` 
 3) Build JVM part 
    `cd didcomm-demo-jvm && ./gradlew build && cd ..`
 
