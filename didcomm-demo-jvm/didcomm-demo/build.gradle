@@ -12,9 +12,8 @@ version = "${version}"
 dependencies {
     implementation platform('org.jetbrains.kotlin:kotlin-bom')
     implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8'
-    implementation 'com.google.code.gson:gson:2.8.8'
-    implementation 'org.didcommx.peerdid:peerdid:0.1.0'
-    implementation 'org.didcommx.didcomm:didcomm:0.1.0-SNAPSHOT'
+    implementation 'org.didcommx:peerdid:0.2.0'
+    implementation 'org.didcommx:didcomm:0.1.0'
 
     testImplementation 'org.jetbrains.kotlin:kotlin-test'
     testImplementation 'org.jetbrains.kotlin:kotlin-test-junit'
