@@ -22,9 +22,8 @@ setup(
         "Programming Language :: Python :: 3.7",
     ],
     install_requires=[
-        # TODO switch to pypi once necessary didcomm version is released
-        "didcomm@git+https://github.com/sicpa-dlab/didcomm-python.git",
-        "peerdid@git+https://github.com/sicpa-dlab/peer-did-python.git",
+        "didcomm",
+        "peerdid",
         "click"
     ],
     extras_require={
