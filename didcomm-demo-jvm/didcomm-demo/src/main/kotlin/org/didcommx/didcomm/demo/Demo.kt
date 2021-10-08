@@ -1,4 +1,4 @@
-import org.didcommx.didcomm.demo.DIDCommDemoHelper
+package org.didcommx.didcomm.demo
 
 fun main() {
     println()

@@ -2,7 +2,6 @@ plugins {
     id 'org.jetbrains.kotlin.jvm' version "${kotlinJvm}"
     id 'application'
     //id "org.jlleitschuh.gradle.ktlint" version "${ktlintGradle}"
-    // TODO: remove once published to Maven
     id 'com.github.johnrengelman.shadow' version '7.0.0'
 }
 
@@ -17,6 +16,8 @@ dependencies {
     implementation platform('org.jetbrains.kotlin:kotlin-bom')
     implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8'
     implementation 'com.google.code.gson:gson:2.8.8'
+    //implementation 'org.didcommx.peerdid:peerdid:0.1.0'
+    //implementation 'org.didcommx.didcomm:didcomm:0.1.0-SNAPSHOT'
     // TODO remove when contribution will be merged to upstream
     implementation fileTree(include: ['*.jar'], dir: 'libs')
 

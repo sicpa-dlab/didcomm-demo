@@ -1,7 +1,7 @@
 from didcomm_demo.didcomm_demo import DIDCommDemo
 
 if __name__ == '__main__':
-    print("\n")
+    print()
     demo = DIDCommDemo()
 
     # 1. Bob creates a pairwise peer DID for the connection
@@ -9,7 +9,7 @@ if __name__ == '__main__':
                                         service_endpoint="http://service",
                                         service_routing_keys=["key1", "key2"])
     print(f"Bob generates a new pairwise peer DID for communication with Alice: `{bob_peer_did}`.")
-    print("\n")
+    print()
 
     # 2. Alice creates a pairwise peer DID for the connection
     alice_peer_did = demo.create_peer_did()
@@ -21,7 +21,7 @@ if __name__ == '__main__':
     print(f"Alice sends '{msg_bob}' to Bob.")
     print(
         f"The message is authenticated by Alice's peer DID `{alice_peer_did}` and encrypted to Bob's peer DID `{bob_peer_did}`")
-    print("\n")
+    print()
 
     # 4. Bob unpacks the message
     unpacked_msg, frm_did, to_did, _ = demo.unpack(packed_to_bob.packed_msg)
