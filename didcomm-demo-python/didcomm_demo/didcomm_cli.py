@@ -91,9 +91,9 @@ def unpack(msg):
         initial_msg, frm, to, _ = demo.unpack(msg)
         click.echo()
         if frm:
-            click.echo(f"authcrypted {initial_msg} from {frm} to {to}")
+            click.echo(f"authcrypted '{initial_msg}' from {frm} to {to}")
         else:
-            click.echo(f"anoncrypted {initial_msg} to {to}")
+            click.echo(f"anoncrypted '{initial_msg}' to {to}")
     except DIDCommError as e:
         click.echo(f"{e}")
     click.echo()

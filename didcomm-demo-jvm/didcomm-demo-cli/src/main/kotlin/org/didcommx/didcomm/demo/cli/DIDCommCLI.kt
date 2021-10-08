@@ -30,7 +30,7 @@ class PeerDIDCreatorCommand : Subcommand("create-peer-did", "Creates a new Peer 
     val serviceRoutingKeys by option(
         ArgType.String,
         description = "Service routing keys",
-        fullName = "service-routing-keys"
+        fullName = "service-routing-key"
     ).multiple()
 
     override fun execute() {
@@ -120,9 +120,9 @@ class UnpackCommand : Subcommand("unpack", "Unpacks the message") {
         val res = try {
             val unpackRes = demo.unpack(message)
             unpackRes.from?.let {
-                "authcrypted ${unpackRes.message} from ${unpackRes.from} to ${unpackRes.to}"
+                "authcrypted '${unpackRes.message}' from ${unpackRes.from} to ${unpackRes.to}"
             } ?: {
-                "anoncrypted ${unpackRes.message} to ${unpackRes.to}"
+                "anoncrypted '${unpackRes.message}' to ${unpackRes.to}"
             }
         } catch (e: DIDCommException) {
             e.localizedMessage
