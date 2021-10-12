@@ -28,6 +28,8 @@ Prerequisites: Python 3.7+, Java 8+.
 3) Build and Install JVM part 
    `cd didcomm-demo-jvm && ./gradlew installDist && cd ..`
 
+Steps 2 and 3 can be run via `./install.sh` on Linux.
+
 ### Running The Demo
 After installation is done, just run `python3 demo.py` from the root repository folder. 
 
