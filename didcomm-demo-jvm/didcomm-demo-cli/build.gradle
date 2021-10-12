@@ -12,9 +12,9 @@ dependencies {
     implementation project(':didcomm-demo')
     implementation platform('org.jetbrains.kotlin:kotlin-bom')
     implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8'
-    implementation 'org.jetbrains.kotlinx:kotlinx-cli:0.3.3'
-    implementation 'org.didcommx:peerdid:0.2.0'
-    implementation 'org.didcommx:didcomm:0.1.0'
+    implementation "org.jetbrains.kotlinx:kotlinx-cli:${kotlinxCli}"
+    implementation "org.didcommx:peerdid:${peerDid}"
+    implementation "org.didcommx:didcomm:${didcomm}"
 
     testImplementation 'org.jetbrains.kotlin:kotlin-test'
     testImplementation 'org.jetbrains.kotlin:kotlin-test-junit'
