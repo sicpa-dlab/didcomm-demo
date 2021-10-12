@@ -69,7 +69,7 @@ def from_python_to_java():
 
 def from_java_to_python():
     print("--------------------------------")
-    print("ALICE _ JAVA; BOB - PYTHON")
+    print("ALICE - JAVA; BOB - PYTHON")
     print()
     demo(call_didcomm_java, call_didcomm_python)
     print()
