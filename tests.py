@@ -1,12 +1,13 @@
 import json
 import subprocess
+import sys
 from enum import Enum
+from pathlib import Path
 
 PYTHON_CLI = "didcomm-cli"
 
-# TODO: call a script instead
-JAVA_CLI = "java"
-JAVA_ARGS = ["-jar", "didcomm-demo-jvm/didcomm-demo-cli/build/libs/didcomm-demo-cli-0.1-SNAPSHOT.jar"]
+JAVA_CLI_NAME = "didcomm-demo-cli.bat" if sys.platform.startswith("win") else "didcomm-demo-cli"
+JAVA_CLI = Path("./didcomm-demo-jvm") / "didcomm-demo-cli" / "build" / "install" / "didcomm-demo-cli" / "bin" / JAVA_CLI_NAME
 
 
 class Command(Enum):
@@ -21,7 +22,7 @@ def call_didcomm_python(cmd: Command, *args):
 
 
 def call_didcomm_java(cmd: Command, *args):
-    return subprocess.check_output([JAVA_CLI] + JAVA_ARGS + [cmd.value] + list(args)).strip().decode()
+    return subprocess.check_output([JAVA_CLI, cmd.value] + list(args)).strip().decode()
 
 
 def demo(alice_fun, bob_fun):
@@ -53,7 +54,8 @@ def demo(alice_fun, bob_fun):
 
     # 3. Alice sends message to Bob
     msg_bob = "Hello Bob!"
-    packed_to_bob_json = alice_fun(Command.PACK, "Hello Bob!", '--from', alice_peer_did, '--to', bob_peer_did)
+    packed_to_bob_json = alice_fun(Command.PACK, "Hello Bob!", '--from', alice_peer_did, '--to', bob_peer_did,
+                                   '--sign-from', alice_peer_did)
     packed_to_bob = json.loads(packed_to_bob_json)
     assert "ciphertext" in packed_to_bob
     assert "protected" in packed_to_bob

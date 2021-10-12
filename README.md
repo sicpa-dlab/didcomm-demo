@@ -18,14 +18,18 @@ Showcase DIDComm V2 implementation.
 ### Installation
 Prerequisites: Python 3.7+, Java 8+.
 
-1) Create virtual environment for Python
+1) Create virtual environment for Python. For example,
+    ```
+    python3 -m venv ./venv
+    source ./venv/bin/activate
+    ```
 2) Install Python part
   `cd didcomm-demo-python && pip install -e.[tests] && cd ..` 
-3) Build JVM part 
-   `cd didcomm-demo-jvm && ./gradlew build && cd ..`
+3) Build and Install JVM part 
+   `cd didcomm-demo-jvm && ./gradlew installDist && cd ..`
 
 ### Running The Demo
-After installation is done, just run `python demo.py` from the root repository folder. 
+After installation is done, just run `python3 demo.py` from the root repository folder. 
 
 The Demo uses Python and JVM Demo CLIs to pass commands and prove interoperability.
 
